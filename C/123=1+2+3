@@ -1,0 +1,38 @@
+// 123 = 1 + 2 + 3 
+// 意思就是 輸入123 要輸出6
+C的方法
+#include <stdio.h>
+int sum_of_digit(int n){
+  if(n==0){
+    return 0;
+  }
+  else{
+    return(n%10) + sum_of_digit(n/10)
+  }
+}
+
+int main(){
+  int num;
+  scanf("%d", &num);
+  int result = sum_of_digit(num);
+	printf("The sum of digits in %d is %d\n", num, result);
+  return 0;
+}
+----------------------------------------------------------
+C++的方法
+#include <iostream>
+using namespace std;
+int sum_of_digt(int n) {
+	if (n == 0) {
+		return 0;
+	}	
+	else {
+		return(n % 10) + sum_of_digt(n / 10);
+	}
+}
+int main() {
+	int n;
+	cin >> n;
+	cout << sum_of_digt(n);
+	return 0;
+}
